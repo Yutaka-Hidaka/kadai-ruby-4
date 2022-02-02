@@ -39,17 +39,27 @@
         <p>ありがとうございました。送信を受け付けました。</p>
         <p>3営業日以内をめどにご返信いたしますので、しばらくお待ちください。</p>
     <table class="table">
-        <% name = params['target_company'] %>
-            <p> <%= name %></p>
-        <% name = params['target_name'] %>
-             <p> <%= name %></p>
-        <% name = params['target_mail'] %>
-            <p> <%= name %></p>
-        <% name = params['target_tel'] %>
-            <p> <%= name %></p>
-        <% name = params['target_content'].gsub(/\r\n|\r|\n/, "<br>") %>
-            <p> <%= name %></p>
-        </table>
+        <tr>
+            <%  company = params['target_company'] %> 
+                <td> <%= company %></td>
+        </tr>
+        <tr>
+            <% name = params['target_name'] %>
+                 <td> <%= name %></td>
+        </tr>
+        <tr>
+            <% mail = params['target_mail'] %>
+                <td> <%= mail %></td>
+        </tr>
+        <tr>
+            <% tel = params['target_tel'] %>
+                <td> <%= tel %></td>
+        </tr>
+        <tr>
+            <% content = params['target_content'].gsub(/\r\n|\r|\n/, "<br>") %>
+                <td> <%= content %></td>
+        </tr>
+    </table>
         <div class="text-center mb-4">
             <!-- 「戻る」ボタンを緑色にする設定を追加 -->
             <a href="/" class="btn btn-success">戻る</a>
